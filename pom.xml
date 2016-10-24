@@ -10,7 +10,7 @@
 
 	<properties>
 		<springframework.version>4.3.3.RELEASE</springframework.version>
-		<hibernate.version>4.3.6.Final</hibernate.version>
+		<hibernate.version>4.2.11.Final</hibernate.version>
 		<mysql.version>5.1.38</mysql.version>
 		<proxool.version>0.9.1</proxool.version>
 		<joda-time.version>2.9.4</joda-time.version>
@@ -22,6 +22,7 @@
 		<log4j.version>1.2.17</log4j.version>
 		<jstl.version>1.2</jstl.version>
 		<jaxb.version>2.2.11</jaxb.version>
+		<aspectjrt.version>1.8.9</aspectjrt.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-lang.version>2.6</commons-lang.version>
 		<commons-collections.version>3.2.2</commons-collections.version>
@@ -74,6 +75,12 @@
 			<version>${springframework.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+
 		<!-- Mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -106,6 +113,12 @@
 			</exclusions>
 		</dependency>
 
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		
 		<!-- Joda-Time -->
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -159,12 +172,12 @@
 			<artifactId>cxf-core</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
-		
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.apache.cxf</groupId> -->
-<!-- 			<artifactId>cxf-rt-core</artifactId> -->
-<!-- 			<version>${cxf.version}</version> -->
-<!-- 		</dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.cxf</groupId> -->
+		<!-- <artifactId>cxf-rt-core</artifactId> -->
+		<!-- <version>${cxf.version}</version> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
@@ -228,6 +241,19 @@
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
 			<version>${commons-collections.version}</version>
+		</dependency>
+
+		<!-- Aspectj Jar -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectjrt.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectjrt.version}</version>
 		</dependency>
 
 	</dependencies>

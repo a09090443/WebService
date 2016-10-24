@@ -11,14 +11,14 @@
 <!-- 	<import resource="classpath:applicationContext-dataSource.xml"/> -->
 <!-- 	<import resource="classpath:applicationContext-service.xml"/> -->
 	
-	<!-- Import DataSource 
-	<import resource="applicationContext-dataSource.xml"/>-->
+	<!-- Import DataSource -->
+	<import resource="classpath:applicationContext-dataSource.xml"/>
+		
+	<!-- Import Service -->
+	<import resource="classpath:applicationContext-service.xml"/>
 	
-	<!-- Import Dao 
-	<import resource="applicationContext-dao.xml"/>-->
-	
-	<!-- Import Service 
-	<import resource="applicationContext-service.xml"/>-->
+	<!-- Import Dao -->
+	<import resource="classpath:applicationContext-dao.xml"/>
 	
 	<!-- Import WebService -->
 	<import resource="applicationContext-webservice.xml"/>

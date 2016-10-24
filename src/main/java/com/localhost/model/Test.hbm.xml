@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013/3/13 ?U?? 02:34:13 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.localhost.model.Test" table="test" >
+        <comment>Test</comment>
+        <id name="oid" type="string">
+            <column name="oid" length="32" />
+            <generator class="uuid" />
+        </id>
+        <property name="ip" type="string">
+            <column name="ip" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -10,15 +10,25 @@
 		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
-<!-- 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" /> CXF 3 don't need this file-->
+	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" /> 
+		CXF 3 don't need this file -->
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
-	<bean id="helloWorld" class="com.localhost.webservice.impl.HelloWorldImpl" />
-<!-- 	<bean id="memcacheTest" class="com.localhost.webservice.impl.MemcacheTestImpl" /> -->
-	
+	<bean id="helloWorldWebService" class="com.localhost.webservice.impl.HelloWorldWebServiceImpl">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="userWebService" class="com.localhost.webservice.impl.UserWebServiceImpl">
+		<property name="userService" ref="userService"></property>
+	</bean>
+
 	<!-- JAX-WS -->
 	<!-- implementor 指定 WebService 實現類, address 指定訪問地址 -->
-	<jaxws:endpoint implementor="#helloWorld" address="/HelloWorld" publish="true" />
-<!-- 	<jaxws:endpoint implementor="#memcacheTest" address="/MemcacheTest" publish="true" /> -->
-	
+	<!-- <jaxws:endpoint implementor="#helloWorld" address="/HelloWorld" publish="true" 
+		/> -->
+	<jaxws:endpoint id="HelloWorldWebService" implementor="#helloWorldWebService"
+		address="/HelloWorldWebService" publish="true">	</jaxws:endpoint>
+		
+	<jaxws:endpoint id="UserWebService" implementor="#userWebService"
+		address="/UserWebService" publish="true">	</jaxws:endpoint>
+
 </beans>
