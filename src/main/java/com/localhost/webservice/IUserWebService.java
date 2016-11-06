@@ -13,6 +13,16 @@ public interface IUserWebService {
 	@GET
 	@WebMethod(operationName = "addUser", action = "addUser")
 	@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.BARE)
-	public Boolean addUser(@WebParam(name = "userName") String userName, @WebParam(name = "passowrd") String passowrd) throws Exception;
+	public void addUser(@WebParam(name = "account") String account, @WebParam(name = "userName") String userName, @WebParam(name = "password") String password) throws Exception;
+	
+	@GET
+	@WebMethod(operationName = "delUser", action = "delUser")
+	@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.BARE)
+	public void delUser(@WebParam(name = "account") String account) throws Exception;
+
+	@GET
+	@WebMethod(operationName = "autoAddUser", action = "autoAddUser")
+	@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.BARE)
+	public String autoAddUser(int quentity) throws Exception;
 
 }

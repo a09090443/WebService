@@ -2,11 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xsi:schemaLocation="
   		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
   		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 		http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd
+		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
 		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
@@ -26,9 +28,11 @@
 	<!-- <jaxws:endpoint implementor="#helloWorld" address="/HelloWorld" publish="true" 
 		/> -->
 	<jaxws:endpoint id="HelloWorldWebService" implementor="#helloWorldWebService"
-		address="/HelloWorldWebService" publish="true">	</jaxws:endpoint>
-		
+		address="/HelloWorldWebService" publish="true">
+	</jaxws:endpoint>
+
 	<jaxws:endpoint id="UserWebService" implementor="#userWebService"
-		address="/UserWebService" publish="true">	</jaxws:endpoint>
+		address="/UserWebService" publish="true">
+	</jaxws:endpoint>
 
 </beans>

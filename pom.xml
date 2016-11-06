@@ -26,6 +26,7 @@
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-lang.version>2.6</commons-lang.version>
 		<commons-collections.version>3.2.2</commons-collections.version>
+		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<!-- <h2.version>1.4.187</h2.version> -->
 		<!-- <dbunit.version>2.2</dbunit.version> -->
 	</properties>
@@ -34,8 +35,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<version>4.12</version>
 		</dependency>
 
 		<!-- Spring -->
@@ -118,7 +118,7 @@
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		
+
 		<!-- Joda-Time -->
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -242,6 +242,12 @@
 			<artifactId>commons-collections</artifactId>
 			<version>${commons-collections.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons-beanutils.version}</version>
+		</dependency>
 
 		<!-- Aspectj Jar -->
 		<dependency>
@@ -257,7 +263,27 @@
 		</dependency>
 
 	</dependencies>
+
 	<build>
 		<finalName>webService</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<warName>${project.artifactId}</warName>
+					<webResources>
+						<resource>
+							<directory>/lib</directory>
+							<targetPath>WEB-INF/lib</targetPath>
+							<includes>
+								<include>**/*.jar</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>

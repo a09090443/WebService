@@ -14,7 +14,7 @@ public class WebServiceClient {
 
 			JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 			Client client = dcf.createClient(url);
-			Object[] result = client.invoke("addUser", "fff", "4321");
+			Object[] result = client.invoke("autoAddUser", 10);
 			for (Object out : result) {
 				System.out.println(out);
 			}

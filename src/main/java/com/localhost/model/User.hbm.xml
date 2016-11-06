@@ -1,29 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
-<hibernate-mapping> 
-	<!-- <typedef name="encrypted" class="org.jasypt.hibernate.type.EncryptedStringType">
-      <param name="encryptorRegisteredName">strongHibernateStringEncryptor</param>
-    </typedef>-->
-	<class name="com.localhost.model.User" table="user">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- <typedef name="encrypted" class="org.jasypt.hibernate.type.EncryptedStringType"> 
+		<param name="encryptorRegisteredName">strongHibernateStringEncryptor</param> 
+		</typedef> -->
+	<class name="com.localhost.model.User" table="user" dynamic-update="true">
 		<comment>使用者基本檔</comment>
 		<composite-id>
-            <key-property name="userId" type="string">
-                <column name="user_id" length="10" />
-            </key-property>
-            <key-property name="vendorId" type="string">
-                <column name="vendor_id" length="8" />
-            </key-property>
-        </composite-id>
-        <property name="userName" type="string">
-            <column name="user_name" length="10">
-                <comment></comment>
-            </column>
-        </property>
-        <property name="password" type="string">
-            <column name="password" length="100">
-                <comment></comment>
-            </column>
-        </property>
+			<key-property name="userId" type="int">
+				<column name="user_id" length="10" />
+			</key-property>
+			<key-property name="account" type="string">
+				<column name="account" length="100" />
+			</key-property>
+			<generator class="assigned" />
+		</composite-id>
+		<property name="userName" type="string">
+			<column name="user_name" length="10">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="password" type="string">
+			<column name="password" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="status" type="string">
+			<column name="status" length="1">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="email" type="string">
+			<column name="email" length="100">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="registerTime" type="timestamp">
+			<column name="registerTime">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="lastActiveTime" type="timestamp">
+			<column name="lastActiveTime">
+				<comment></comment>
+			</column>
+		</property>
 
 	</class>
 </hibernate-mapping>

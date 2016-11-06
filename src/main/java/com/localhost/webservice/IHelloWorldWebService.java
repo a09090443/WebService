@@ -14,12 +14,12 @@ public interface IHelloWorldWebService {
 	@WebMethod(operationName = "sayHi", action = "sayHi")
 	@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.BARE)
 	public String sayHi() throws Exception;
-	
+
 	@GET
 	@WebMethod(operationName = "hello", action = "hello")
 	@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.BARE)
 	public String hello();
-	
+
 	@GET
 	@WebMethod(operationName = "getEcho", action = "getEcho")
 	@SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL, parameterStyle = SOAPBinding.ParameterStyle.BARE)
