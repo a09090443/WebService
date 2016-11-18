@@ -24,7 +24,6 @@ public class UserWebServiceImpl implements IUserWebService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
 	 * @see com.localhost.webservice.IUserWebService#autoAddUser(int)
 	 */
 	@Override
@@ -46,6 +45,9 @@ public class UserWebServiceImpl implements IUserWebService {
 		return "Success";
 	}
 
+	/* (non-Javadoc)
+	 * @see com.localhost.webservice.IUserWebService#addUser(java.lang.String, java.lang.String, java.lang.String)
+	 */
 	@Override
 	public void addUser(String account, String userName, String password) throws Exception {
 		User user = new User();
@@ -55,6 +57,9 @@ public class UserWebServiceImpl implements IUserWebService {
 		userService.addUser(user);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.localhost.webservice.IUserWebService#delUser(java.lang.String)
+	 */
 	@Override
 	public void delUser(String account) throws Exception {
 		// TODO Auto-generated method stub
