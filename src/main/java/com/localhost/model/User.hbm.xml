@@ -7,7 +7,7 @@
 	<class name="com.localhost.model.User" table="user" dynamic-update="true">
 		<comment>使用者基本檔</comment>
 		<composite-id>
-			<key-property name="userId" type="int">
+			<key-property name="userId" type="string">
 				<column name="user_id" length="10" />
 			</key-property>
 			<key-property name="account" type="string">
@@ -35,12 +35,12 @@
 				<comment></comment>
 			</column>
 		</property>
-		<property name="registerTime" type="timestamp">
+		<property name="registerTime" type="string">
 			<column name="registerTime">
 				<comment></comment>
 			</column>
 		</property>
-		<property name="lastActiveTime" type="timestamp">
+		<property name="lastActiveTime" type="string">
 			<column name="lastActiveTime">
 				<comment></comment>
 			</column>

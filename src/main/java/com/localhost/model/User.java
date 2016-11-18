@@ -1,23 +1,22 @@
 package com.localhost.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class User implements Serializable {
 	
-	private Integer userId;
+	private String userId;
 	private String account;
 	private String userName;
 	private String password;
 	private String email;
 	private String status;
-	private Date registerTime;
-	private Date lastActiveTime;
+	private String registerTime;
+	private String lastActiveTime;
 	
-	public Integer getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(Integer userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {
@@ -50,16 +49,16 @@ public class User implements Serializable {
 	public void setAccount(String account) {
 		this.account = account;
 	}
-	public Date getRegisterTime() {
+	public String getRegisterTime() {
 		return registerTime;
 	}
-	public void setRegisterTime(Date registerTime) {
+	public void setRegisterTime(String registerTime) {
 		this.registerTime = registerTime;
 	}
-	public Date getLastActiveTime() {
+	public String getLastActiveTime() {
 		return lastActiveTime;
 	}
-	public void setLastActiveTime(Date lastActiveTime) {
+	public void setLastActiveTime(String lastActiveTime) {
 		this.lastActiveTime = lastActiveTime;
 	}
 

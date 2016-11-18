@@ -19,7 +19,7 @@ public class UserDaoTest extends TestBase{
     @Rollback(true)
 	public void testFindMaxUserId() {
 		try {
-			int userId = userDao.findMaxId();
+			String userId = userDao.findMaxId();
 			System.out.println(userId);
 		} catch (Exception e) {
 			e.printStackTrace();
