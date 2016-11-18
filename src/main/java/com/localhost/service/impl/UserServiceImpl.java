@@ -1,6 +1,5 @@
 package com.localhost.service.impl;
 
-import java.util.Date;
 import java.util.Map;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -8,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.localhost.dao.IUserDao;
 import com.localhost.model.User;
 import com.localhost.service.IUserService;
+import com.usefulness.utils.date.DateUtils;
 
 @Transactional
 public class UserServiceImpl implements IUserService {
@@ -17,13 +17,18 @@ public class UserServiceImpl implements IUserService {
 	public void addUser(User user) throws Exception {
 		Integer newId = 0;
 		if (null == maxId) {
-			maxId = userDao.findMaxId();
+			String userId = userDao.findMaxId();
+			if(userId.equals("0")){
+				maxId = 0;
+			}else{
+				maxId = Integer.valueOf(userId);
+			}
 		}
 		newId = maxId + 1;
-
-		Date getTime = new Date();
-
-		user.setUserId(newId);
+		String getTime = DateUtils.getCurrentDate("yyyy-MM-dd hh:mm:ss");
+		String formatStr = "%05d";
+		String newIdStr = String.format(formatStr, newId);
+		user.setUserId(newIdStr);
 		user.setRegisterTime(getTime);
 		user.setLastActiveTime(getTime);
 		try {
