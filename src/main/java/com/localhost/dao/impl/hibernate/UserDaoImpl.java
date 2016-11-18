@@ -23,10 +23,10 @@ public class UserDaoImpl extends BaseHibernateDAOImpl<User> implements IUserDao 
 	}
 
 	@Override
-	public Integer findMaxId() {
+	public String findMaxId() {
 		String hql = "FROM User U ORDER BY U.registerTime DESC";
 		List<User> userList = this.queryHql(hql, null);
-		return CollectionUtils.isEmpty(this.queryHql(hql, null)) ? 0 : userList.get(0).getUserId();
+		return CollectionUtils.isEmpty(this.queryHql(hql, null)) ? "0" : userList.get(0).getUserId();
 	}
 
 }
